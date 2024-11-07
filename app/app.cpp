@@ -3,5 +3,5 @@
 
 namespace vsite::oop::v3
 {
-
+    // Funkcije su implementirane direktno u zaglavlju.
 }
