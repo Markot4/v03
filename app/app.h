@@ -1,11 +1,10 @@
 #pragma once
 #include <string>
-using namespace std;
 namespace vsite::oop::v3 
 {
 	class student {
 		public:
-			string name;
+			std::string name;
 			int grade;
 	};
 
