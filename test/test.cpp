@@ -123,13 +123,13 @@ namespace all_tests
 	public:
 		TEST_METHOD(array_default_constructor)
 		{
-			vsite::oop::v3::array a;
+			array a;
 			Assert::AreEqual(0u, a.size());
 		}
 
 		TEST_METHOD(array_constructor)
 		{
-			vsite::oop::v3::array a(size, value);
+			array a(size, value);
 			Assert::AreEqual(size, a.size());
 			for(uint32_t i=0; i<a.size(); ++i)
 				Assert::AreEqual(value, a.at(i));
@@ -137,20 +137,20 @@ namespace all_tests
 
 		TEST_METHOD(array_index_invalid_large)
 		{
-			vsite::oop::v3::array a(size, value);
+			array a(size, value);
 			Assert::AreEqual(0., a.at(100));
 		}
 
 		TEST_METHOD(array_index_invalid_negative)
 		{
-			vsite::oop::v3::array a(size, value);
+			array a(size, value);
 			Assert::AreEqual(0., a.at(-1));
 		}
 
 		TEST_METHOD(array_copy_constructor)
 		{
-			vsite::oop::v3::array a(size, value);
-			vsite::oop::v3::array b(a);
+			array a(size, value);
+			array b(a);
 			Assert::AreEqual(size, b.size());
 			for (uint32_t i = 0; i < b.size(); ++i)
 				Assert::AreEqual(value, b.at(i));
@@ -158,8 +158,8 @@ namespace all_tests
 
 		TEST_METHOD(array_move_constructor)
 		{
-			vsite::oop::v3::array a(size, value);
-			vsite::oop::v3::array b(std::move(a));
+			array a(size, value);
+			array b(std::move(a));
 			Assert::AreEqual(0u, a.size());
 			Assert::AreEqual(size, b.size());
 			for (uint32_t i = 0; i < b.size(); ++i)
@@ -168,7 +168,7 @@ namespace all_tests
 
 		TEST_METHOD(array_grow_from_empty)
 		{
-			vsite::oop::v3::array a;
+			array a;
 			Assert::AreEqual(0u, a.size());
 			a.push_back(1.5);
 			Assert::AreEqual(1u, a.size());
@@ -183,7 +183,7 @@ namespace all_tests
 
 		TEST_METHOD(array_grow)
 		{
-			vsite::oop::v3::array a(size, value);
+			array a(size, value);
 			Assert::AreEqual(size, a.size());
 			a.push_back(100);
 			a.push_back(200);
