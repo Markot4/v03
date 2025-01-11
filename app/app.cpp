@@ -19,7 +19,7 @@ namespace vsite::oop::v3
 	}
 
 	unsigned int results::has_grade(int grade) {
-		int koliko = 0;
+		unsigned int koliko = 0;
 		for (int i = 0; i < prviSlobodni; ++i) {
 			if (studenti[i].grade == grade) {
 				koliko++;
@@ -29,7 +29,7 @@ namespace vsite::oop::v3
 	}
 
 	unsigned int results::starts_with_letter(char name) {
-		int count = 0;
+		unsigned int count = 0;
 		
 		for (int i = 0; i < prviSlobodni; i++) {
 			if (tolower(studenti[i].name[0]) == tolower(name)) {
