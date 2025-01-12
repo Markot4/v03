@@ -1,5 +1,6 @@
 #include "app.h"
 #include <algorithm>
+#include <iostream>
 
 namespace vsite::oop::v3
 {
@@ -40,12 +41,12 @@ namespace vsite::oop::v3
 	}
 
 	array::array() {
-		_array = new double[200];
+		_array = nullptr;
 		prviSlobodni = 0;
 	}
 
 	array::array(uint32_t size, double value) {
-		_array = new double[200];
+		_array = new double[size];
 		for (uint32_t i = 0; i < size; ++i) {
 			_array[i] = value;
 		}
@@ -53,7 +54,7 @@ namespace vsite::oop::v3
 	}
 
 	array::array(const array& other) {
-		_array = new double[200];
+		_array = new double[other.prviSlobodni];
 		for (uint32_t i = 0; i < other.prviSlobodni; ++i) {
 			_array[i] = other._array[i];
 		}
@@ -68,9 +69,7 @@ namespace vsite::oop::v3
 	}
 
 	array::~array() {
-		if (_array) {
-			delete[] _array;
-		}
+		delete[] _array;
 	}
 
 
@@ -83,6 +82,12 @@ namespace vsite::oop::v3
 
 	double array::push_back(double value) {
 		//postaviti value na kraj arrayja
+		double *_newArray = new double[prviSlobodni+1];
+		for (uint32_t i = 0; i < prviSlobodni; i++) {
+			_newArray[i] = _array[i];
+		}
+		delete[] _array;
+		_array = _newArray;
 		_array[prviSlobodni] = value;
 		prviSlobodni++;
 		return value;

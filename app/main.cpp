@@ -10,6 +10,14 @@ using namespace vsite::oop::v3;
 
 int main()
 {
+	vsite::oop::v3::array a;
+	a.push_back(1.5);
+	a.push_back(2.5);
+	a.push_back(3.5);
+	//Assert::AreEqual(2.5, a.at(1));
+
+
+
 	int brojRezultata;
 	cout << "Upisite broj rezultata: ";
 	cin >> brojRezultata;
