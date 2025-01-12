@@ -40,7 +40,7 @@ int main()
 	cout << "Upisite ocjenu za koju vas zanima statistika: ";
 	cin >> grade;
 	int koliko  = r.has_grade(grade);
-	cout << "Ovoliko studenata ima ocjenu 3: " << koliko;
+	cout << "Ovoliko studenata ima ocjenu : " << koliko;
 	char prvoSlovo;
 	cout << "\nUpisite prvo slovo imena studenta: ";
 	cin >> prvoSlovo;
